@@ -20,6 +20,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    # 'rest_framework.authtoken', # Removed for JWT
+    'drf_spectacular',
+    'core',
 ]
 
 MIDDLEWARE = [
