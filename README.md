@@ -1,5 +1,10 @@
 # Django MVP Backend Demo
 
+🚀 Live Demo: [link](http://ec2-51-21-152-186.eu-north-1.compute.amazonaws.com/)
+
+
+📄 API Docs: [link](http://ec2-51-21-152-186.eu-north-1.compute.amazonaws.com/api/docs/)
+
 A minimal Django project structure with Docker, DRF, and Postgres.
 
 ## Requirements
@@ -41,6 +46,15 @@ A minimal Django project structure with Docker, DRF, and Postgres.
     - `auth_views.py`: Register/Login views (JWT)
 - `scripts/`: Helper scripts (entrypoint, seed)
 - `docs/`: Example API usage
+
+## Live Demo (Optional)
+This project can be deployed on a single AWS EC2 instance using Docker.
+See [deploy/README.md](deploy/README.md) for a quick setup.
+
+## screanshots
+
+![swagger](screanshots/swagger.png)
+
 
 ## Usage
 
