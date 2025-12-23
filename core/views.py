@@ -126,3 +126,28 @@ class ProductDetailAPIView(APIView):
             return Response(status=status.HTTP_404_NOT_FOUND)
         product.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+@extend_schema(
+    tags=['Health'],
+    summary="Health Check",
+    description="Check the health of the API and database connection",
+    responses={200: {"type": "object", "properties": {"status": {"type": "string"}, "database": {"type": "string"}}}}
+)
+class HealthCheckAPIView(APIView):
+    """
+    API endpoint to check the health of the application.
+    """
+    permission_classes = [permissions.AllowAny]
+
+    def get(self, request):
+        db_status = "ok"
+        try:
+            connection.ensure_connection()
+        except OperationalError:
+            db_status = "unavailable"
+        
+        return Response({
+            "status": "ok",
+            "database": db_status
+        }, status=status.HTTP_200_OK)
+
